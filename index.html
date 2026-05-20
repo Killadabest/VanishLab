@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VanishLab</title>
+  <meta name="description" content="VanishLab is a GitHub Pages-ready batch background remover made by Killa / Saftoiu David Andrei.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="VanishLab home">
+      <span class="brand-mark">VL</span>
+      <span>
+        <strong>VanishLab</strong>
+        <small>Background remover</small>
+      </span>
+    </a>
+
+    <nav class="header-actions" aria-label="Page actions">
+      <a class="soft-button" href="#studio">Studio</a>
+      <button class="soft-button" id="creditsBtn" type="button">Credits</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">Batch PNG cutouts, right in your browser</span>
+        <h1>Drop images. Wait a bit. Get cleaner transparent results.</h1>
+        <p>Upload one file or a full folder-style batch, run high quality background removal, then download a single result or every finished image as a zip.</p>
+        <div class="hero-actions">
+          <a class="main-button" href="#studio">Start Removing</a>
+          <button class="soft-button" id="demoBtn" type="button">Add Demo</button>
+        </div>
+      </div>
+
+      <div class="hero-preview" aria-hidden="true">
+        <div class="preview-window">
+          <div class="window-bar">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="before-after">
+            <div class="before-pane">
+              <span>Before</span>
+              <div class="sample-bg"></div>
+            </div>
+            <div class="after-pane">
+              <span>After</span>
+              <div class="sample-person"></div>
+            </div>
+          </div>
+          <div class="quality-strip">
+            <i></i>
+            <i></i>
+            <i></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="studio" id="studio">
+      <aside class="toolbox">
+        <div class="section-title">
+          <span class="eyebrow">Controls</span>
+          <h2>Make the cutout</h2>
+        </div>
+
+        <label class="dropzone" id="dropzone" for="fileInput">
+          <input id="fileInput" type="file" accept="image/*" multiple>
+          <span class="upload-mark">+</span>
+          <strong>Upload images</strong>
+          <small>Click here or drag files into this box</small>
+        </label>
+
+        <div class="control-card">
+          <label class="field">
+            <span>Quality mode</span>
+            <select id="qualityMode">
+              <option value="high">High quality, slower</option>
+              <option value="balanced">Balanced</option>
+              <option value="fast">Fast preview</option>
+            </select>
+          </label>
+
+          <label class="range-field">
+            <span>Background tolerance <b id="strengthValue">34</b></span>
+            <input id="strength" type="range" min="12" max="86" value="34">
+          </label>
+
+          <label class="range-field">
+            <span>Edge softness <b id="featherValue">4</b></span>
+            <input id="feather" type="range" min="1" max="10" value="4">
+          </label>
+
+          <label class="field">
+            <span>Background type</span>
+            <select id="sampleMode">
+              <option value="auto">Auto from edges</option>
+              <option value="white">White / light</option>
+              <option value="green">Green screen</option>
+              <option value="blue">Blue screen</option>
+              <option value="dark">Dark / black</option>
+            </select>
+          </label>
+
+          <label class="check-field">
+            <input id="transparentPreview" type="checkbox" checked>
+            <span>Transparent preview grid</span>
+          </label>
+        </div>
+
+        <div class="action-grid">
+          <button id="processAllBtn" class="main-button" type="button" disabled>Process All</button>
+          <button id="downloadZipBtn" class="soft-button" type="button" disabled>Download Zip</button>
+          <button id="clearBtn" class="soft-button danger" type="button" disabled>Clear</button>
+        </div>
+
+        <p class="fine-print">Best results come from photos with clear subject edges and simple backgrounds. Everything runs locally in the browser.</p>
+      </aside>
+
+      <section class="queue-panel">
+        <div class="queue-header">
+          <div>
+            <span class="eyebrow">Queue</span>
+            <h2>Ready to process</h2>
+          </div>
+          <div class="stats" aria-live="polite">
+            <span id="fileCount">0 files</span>
+            <span id="doneCount">0 ready</span>
+          </div>
+        </div>
+
+        <div class="empty-state" id="emptyState">
+          <div class="empty-preview"></div>
+          <h3>No images uploaded</h3>
+          <p>Add PNG, JPG, WebP, or GIF files and they will show up here.</p>
+        </div>
+
+        <div class="gallery" id="gallery" aria-live="polite"></div>
+      </section>
+    </section>
+  </main>
+
+  <dialog class="credits-modal" id="creditsModal">
+    <div class="modal-card">
+      <button class="close-button" id="closeCredits" type="button" aria-label="Close credits">x</button>
+      <span class="eyebrow">Credits</span>
+      <h2>Made by Killa / Saftoiu David Andrei</h2>
+      <p>VanishLab was made as a clean GitHub Pages website for batch background removal, PNG exports, and zip downloads.</p>
+    </div>
+  </dialog>
+
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
