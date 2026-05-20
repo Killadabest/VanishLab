@@ -1,26 +1,53 @@
-# VanishLab
+# ✨ VanishLab ✨
 
-VanishLab is a clean, browser-based background remover made for fast image cleanup. Upload one image or a full batch, process them directly in your browser, then download a single transparent PNG or export all finished images in a zip file.
+> 🧼 Remove backgrounds.  
+> 🖼️ Clean your images.  
+> 📦 Download everything in one zip.
 
-## Features
+---
 
-- Upload one or multiple images
-- Drag-and-drop support
-- Background removal with adjustable quality modes
-- Edge softness and background tolerance controls
-- Transparent checkerboard preview
-- Download individual PNG files
-- Download all processed images as a zip
-- Fully static site, ready for GitHub Pages
+## 🚀 What Is VanishLab?
 
-## How To Use
+**VanishLab** is a stylish browser-based background remover made for quick image cleanup.
 
-1. Open the website.
-2. Upload your images.
-3. Choose a quality mode.
-4. Click **Process All** or process images one by one.
-5. Download your finished PNG files.
+Upload **one image** or **a whole batch**, process them directly in your browser, preview the transparent results, then download each PNG or export everything together.
 
-## Credits
+---
 
-Made by **Killa / Saftoiu David Andrei**.
+## 🔥 Features
+
+✅ Upload multiple images  
+✅ Drag & drop support  
+✅ Background remover  
+✅ High quality / balanced / fast modes  
+✅ Background tolerance slider  
+✅ Soft edge control  
+✅ Transparent checkerboard preview  
+✅ Download one image  
+✅ Download all images as a `.zip`  
+✅ Works on GitHub Pages  
+✅ No account needed  
+
+---
+
+## 🛠️ How To Use
+
+1. 📤 Upload your images  
+2. ⚙️ Choose your settings  
+3. ✂️ Click **Process All**  
+4. 👀 Preview the results  
+5. 📥 Download one image or the full zip  
+
+---
+
+## 👑 Credits
+
+Made with style by:
+
+# Killa / Saftoiu David Andrei
+
+---
+
+## ⭐ Support
+
+If you like this project, leave a ⭐ on the repo!
